@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Mondelēz International Snacking AI Value Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..800&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#F4F4F6;--surface:#FFFFFF;--fg:#15161C;--muted:#5D6070;--line:#E0E1E8;--faint:#EEEFF3;
+ --accent:#8A2F6E;--accent-soft:#F6E4EF;--accent-ink:#FFFFFF;
+ --high:#B42318;--high-soft:#FDE8E6;--limited:#1D5FA8;--limited-soft:#E2ECF8;--minimal:#56636E;--minimal-soft:#E7EBEE;
+ --display:"Archivo","Arial Narrow",system-ui,sans-serif;--body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root{--bg:#0F1015;--surface:#171820;--fg:#E8E9F0;--muted:#9A9DAD;--line:#2A2C38;--faint:#1E2029;
+ --accent:#E68BC8;--accent-soft:#3A1830;--accent-ink:#0F1015;--high:#F97066;--high-soft:#3A1715;--limited:#6AA8F0;--limited-soft:#14253A;--minimal:#A3B0BA;--minimal-soft:#22282D;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1;text-wrap:balance}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+header{background:var(--surface);border-bottom:1px solid var(--line)}
+header .wrap{padding-block:26px 22px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end}
+@media (max-width:760px){header .wrap{grid-template-columns:1fr}.author{text-align:left!important}}
+.prep{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.tag{font-family:var(--display);font-weight:800;font-stretch:110%;font-size:13px;letter-spacing:.06em;text-transform:uppercase;background:var(--accent);color:var(--accent-ink);padding:4px 9px;border-radius:3px}
+h1{font-size:clamp(32px,5vw,52px);font-weight:800;font-stretch:78%}
+.lede{max-width:64ch;color:var(--muted);margin:10px 0 0;font-size:16px}
+.author{text-align:right;font-size:13px;color:var(--muted);line-height:1.5}
+.author b{display:block;color:var(--fg);font-family:var(--display);font-size:16px}
+.hook{margin-top:22px;border-left:4px solid var(--accent);background:var(--surface);padding:14px 18px;border-radius:0 4px 4px 0;font-size:15.5px;max-width:90ch}
+.hook b{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:4px;font-weight:500}
+section{padding-block:24px 4px}
+.ph h2{font-size:23px;font-weight:700;font-stretch:88%}
+.ph p{margin:4px 0 14px;color:var(--muted);font-size:14px;max-width:72ch}
+.grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:880px){.grid{grid-template-columns:1fr}}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:16px 18px;min-width:0}
+svg text{font-family:var(--body)}
+.pill{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:var(--ps);color:var(--pc);white-space:nowrap}
+.pill::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--pc)}
+.dn{font-family:var(--display);font-weight:800;font-stretch:85%;font-size:24px;margin:4px 0 8px}
+.dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px;margin:12px 0 0}
+.dl dt{color:var(--muted)}.dl dd{margin:0}
+.score{display:flex;gap:16px;margin-top:12px}
+.score div{flex:1;background:var(--faint);border-radius:4px;padding:8px 10px}
+.score b{display:block;font-family:var(--display);font-weight:800;font-size:24px;font-stretch:85%;font-variant-numeric:tabular-nums}
+.score span{font-size:11.5px;color:var(--muted)}
+.list{display:flex;flex-direction:column;gap:6px}
+.row{all:unset;cursor:pointer;display:grid;grid-template-columns:26px minmax(0,1fr) auto;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:9px 12px}
+.row:hover{border-color:var(--accent)}
+.row[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 3px 0 0 var(--accent)}
+.row:focus-visible{outline:2px solid var(--accent)}
+.row .n{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:500}
+.row .t{font-weight:600;font-size:14px;line-height:1.3}
+.row .t small{display:block;font-weight:400;color:var(--muted);font-size:12.5px}
+.plan{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:760px){.plan{grid-template-columns:1fr}}
+.ph3{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:4px;padding:14px 16px}
+.ph3 h3{font-size:16px;font-stretch:92%}
+.ph3 .w{font-family:var(--mono);font-size:11px;color:var(--muted);margin:2px 0 8px}
+.ph3 ul{margin:0;padding-left:18px;font-size:13.5px}
+.ph3 li{margin-bottom:4px}
+.gate{margin-top:8px;font-size:12.5px;font-weight:600;color:var(--accent)}
+.ask{margin-top:24px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;background:var(--accent);color:var(--accent-ink);border-radius:4px;padding:20px 22px}
+@media (max-width:720px){.ask{grid-template-columns:1fr}}
+.ask h3{font-size:22px;font-stretch:85%;font-weight:800}
+.ask p{margin:6px 0 0;font-size:14.5px;max-width:64ch;opacity:.92}
+.contact{font-family:var(--mono);font-size:13px;line-height:1.7;user-select:all}
+footer{border-top:1px solid var(--line);margin-top:30px;padding-block:18px 30px;font-size:12px;color:var(--muted)}
+footer p{margin:0 0 4px;max-width:110ch}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <div><div class="prep"><span class="tag">Built for Mondelēz International</span><span class="eyebrow">Snacks · AI opportunity map</span></div>
+ <h1>Snacking AI Value Map</h1><p class="lede">AI across demand planning, recipe development and brand-safe GenAI marketing.</p></div>
+ <div class="author"><b>Sarfaraz Singh Wahad</b>AIGP · PMP · IE International MBA '26<br>Ex-PwC GenAI · ex-nuclear submarine operations</div>
+</div></header>
+<main class="wrap">
+ <div class="hook"><b>Why I built this for Mondelēz International</b>I&#x27;ve shipped GenAI at scale and I&#x27;m AIGP-certified. Brand-safe GenAI marketing needs both.</div>
+ <section>
+  <div class="ph"><h2>Four candidate use cases</h2><p>Placed by business impact and feasibility. Select one to see its EU AI Act tier, the control it needs and how a 90-day pilot would run.</p></div>
+  <div class="grid">
+   <div class="box" style="padding:10px 8px 4px"><svg id="m" viewBox="0 0 560 400" width="100%" role="img" aria-label="Impact versus feasibility matrix"></svg></div>
+   <div class="box" id="d" aria-live="polite"></div>
+  </div>
+  <div class="list" id="l" style="margin-top:12px"></div>
+ </section>
+ <section>
+  <div class="ph"><h2 id="pt">90-day pilot plan</h2><p>Generated for the selected use case. High-risk use cases add conformity steps before any user sees them.</p></div>
+  <div class="plan" id="p"></div>
+ </section>
+ <div class="ask"><div><h3>What I'm asking for</h3><p>Fifteen minutes with someone working on AI at Mondelēz International to pressure-test this map against your real priorities. I finish my IE MBA in December 2026 and I'm looking for AI product, transformation or governance roles.</p></div>
+ <div class="contact">sarfarazsingh@student.ie.edu<br>+34 663 462 250<br>Madrid</div></div>
+</main>
+<footer><div class="wrap">
+ <p>Independent prototype by Sarfaraz Singh Wahad, built from public information to start a conversation. Not affiliated with, commissioned or endorsed by Mondelēz International. Use cases, scores and tiers are illustrative assumptions, not Mondelēz International's plans.</p>
+ <p>EU AI Act tiers are provisional and need legal confirmation. Other demos: <a href="https://sarfarazsingh.github.io/ntt-genai-control-tower/" style="color:var(--accent)">GenAI control tower</a> · <a href="https://sarfarazsingh.github.io/deloitte-ai-act-triage/" style="color:var(--accent)">EU AI Act triage</a> · <a href="https://sarfarazsingh.github.io/accenture-data-ai-readiness/" style="color:var(--accent)">Data &amp; AI readiness</a></p>
+</div></footer>
+<script>
+const U=[["Demand planning", "Forecasts per SKU and retailer", 9, 8, "minimal", "Planner override", "Forecast accuracy"], ["Recipe development AI", "Suggests formulations to hit targets", 8, 6, "minimal", "R&D validates", "Development cycle time"], ["GenAI marketing content", "Localised brand content", 8, 8, "limited", "Brand and claims review", "Content cost"], ["Trade promotion optimisation", "Plans promotions per retailer", 8, 7, "minimal", "Account manager approves", "Promo ROI"]];
+const T={high:{l:"High-risk",c:"--high",s:"--high-soft",why:"Likely Annex III or Annex I high-risk: conformity, logging, human oversight and registration before launch."},
+ limited:{l:"Transparency",c:"--limited",s:"--limited-soft",why:"Article 50 transparency: people must know they are dealing with AI or AI-generated content."},
+ minimal:{l:"Minimal risk",c:"--minimal",s:"--minimal-soft",why:"No specific AI Act obligations beyond AI literacy; good practice controls still apply."}};
+let sel=U.map((u,i)=>[u[2]*0.6+u[3]*0.4,i]).sort((a,b)=>b[0]-a[0])[0][1];
+const $=q=>document.querySelector(q), v=c=>`var(${c})`;
+const pill=t=>`<span class="pill" style="--pc:${v(T[t].c)};--ps:${v(T[t].s)}">${T[t].l}</span>`;
+function matrix(){
+ const X=f=>60+(f-1)/9*470,Y=i=>360-(i-1)/9*330;
+ let h=`<rect x="60" y="30" width="235" height="165" fill="var(--faint)"/><rect x="295" y="30" width="235" height="165" fill="var(--accent-soft)"/><rect x="60" y="195" width="235" height="165" fill="var(--surface)"/><rect x="295" y="195" width="235" height="165" fill="var(--faint)"/><rect x="60" y="30" width="470" height="330" fill="none" stroke="var(--line)"/>
+ <text x="70" y="48" font-size="11" font-weight="600" fill="var(--muted)">STRATEGIC BETS</text><text x="520" y="48" font-size="11" font-weight="600" fill="var(--accent)" text-anchor="end">START HERE</text>
+ <text x="70" y="352" font-size="11" font-weight="600" fill="var(--muted)">PARK</text><text x="520" y="352" font-size="11" font-weight="600" fill="var(--muted)" text-anchor="end">QUICK WINS</text>
+ <text x="295" y="388" font-size="12" fill="var(--muted)" text-anchor="middle">Feasibility →</text><text x="22" y="195" font-size="12" fill="var(--muted)" text-anchor="middle" transform="rotate(-90 22 195)">Business impact →</text>`;
+ const pos={};U.forEach((u,i)=>{let k=u[3]+"_"+u[2];pos[k]=(pos[k]||0)+1;const off=(pos[k]-1)*16;
+  const x=X(u[3])+off,y=Y(u[2]),on=i===sel,c=v(T[u[4]].c);
+  h+=`<g class="b" data-i="${i}" tabindex="0" role="button" aria-label="${u[0]}" style="cursor:pointer"><circle cx="${x}" cy="${y}" r="${on?20:16}" fill="${on?"var(--accent)":"var(--surface)"}" stroke="${on?"var(--accent)":c}" stroke-width="2.5"/><text x="${x}" y="${y+5}" text-anchor="middle" font-size="14" font-weight="700" fill="${on?"var(--accent-ink)":c}">${i+1}</text></g>`;});
+ $("#m").innerHTML=h;
+ $("#m").querySelectorAll(".b").forEach(g=>{const go=()=>{sel=+g.dataset.i;all();};g.onclick=go;g.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go();}};});
+}
+function detail(){const u=U[sel],t=T[u[4]];
+ $("#d").innerHTML=`<div class="eyebrow">Use case ${sel+1} of ${U.length}</div><div class="dn">${u[0]}</div>${pill(u[4])}
+ <div class="score"><div><b>${u[2]}/10</b><span>Business impact</span></div><div><b>${u[3]}/10</b><span>Feasibility</span></div></div>
+ <dl class="dl"><dt>What it does</dt><dd>${u[1]}</dd><dt>AI Act</dt><dd>${t.why}</dd><dt>Key control</dt><dd>${u[5]}</dd><dt>First KPI</dt><dd>${u[6]}</dd></dl>`;}
+function list(){$("#l").innerHTML=U.map((u,i)=>`<button type="button" class="row" data-i="${i}" aria-pressed="${i===sel}"><span class="n">0${i+1}</span><span class="t">${u[0]}<small>${u[1]}</small></span>${pill(u[4])}</button>`).join("");
+ $("#l").querySelectorAll(".row").forEach(b=>b.onclick=()=>{sel=+b.dataset.i;all();});}
+function plan(){const u=U[sel],hi=u[4]==="high",tr=u[4]==="limited";
+ $("#pt").textContent=`90-day pilot plan: ${u[0]}`;
+ const P=[
+  {h:"Frame and baseline",w:"Weeks 1–3",i:[`Agree the business owner and target for "${u[6].toLowerCase()}"`,"Measure today's baseline and secure data access","Register the system in the AI inventory"].concat(hi?["Start the fundamental-rights and conformity assessment"]:[]),g:"Gate: value case signed"},
+  {h:"Build and evaluate",w:"Weeks 4–8",i:["Build the smallest version that moves the KPI","Create an evaluation set and acceptance thresholds",`Key control in place: ${u[5]}`].concat(tr?["Add AI disclosure to every user touchpoint"]:[]).concat(hi?["Complete technical documentation, logging and human-oversight design"]:[]),g:"Gate: evaluation passed"+(hi?" and conformity file ready":"")},
+  {h:"Pilot and decide",w:"Weeks 9–12",i:["Run with one team or market against a control group","Track quality weekly with control limits","Report KPI change, cost and risks to the sponsor"],g:"Gate: scale, fix or stop"}];
+ $("#p").innerHTML=P.map(p=>`<div class="ph3"><h3>${p.h}</h3><div class="w">${p.w}</div><ul>${p.i.map(x=>`<li>${x}</li>`).join("")}</ul><div class="gate">${p.g}</div></div>`).join("");}
+function all(){matrix();detail();list();plan();}
+all();
+</script>
+</body>
+</html>
